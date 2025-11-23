@@ -1,7 +1,7 @@
 
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { registerUser, findUserByEmail, comparePassword } from '../services/authService';
+import { registerUser, findUserByEmail, comparePassword, recordLogin } from '../services/authService';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) {

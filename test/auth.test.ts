@@ -4,7 +4,9 @@ import app from '../src/index'; // Importar la app principal
 import { prisma } from '../src/db';
 
 beforeAll(async () => {
-  // Limpiar la base de datos antes de las pruebas
+  // Limpiar la base de datos antes de las pruebas en el orden correcto
+  await prisma.historialLogin.deleteMany({});
+  await prisma.comentario.deleteMany({});
   await prisma.usuario.deleteMany({});
 });
 
